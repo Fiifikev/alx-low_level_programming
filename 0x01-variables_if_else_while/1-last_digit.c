@@ -5,10 +5,11 @@
 
 /* betty style doc for function main goes there */
 /**
- * main -  this is a main function
+ * main-this is a main function
  *
- * Return :Always 0
+ * Return:always 0
  */
+
 int main(void)
 {
 	int n;
