@@ -1,12 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 /**
  * **alloc_grid - two diamensional array
  * @width:width of an array
  * @height: height of an array
- * Return: NULL on failure
- * width or height is 0 or negative, return NULL
+ * Return: NULL on failure,width or height is 0 or negative, return NULL
  */
 
 int **alloc_grid(int width, int height)
