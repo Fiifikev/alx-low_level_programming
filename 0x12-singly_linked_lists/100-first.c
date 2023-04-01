@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-void __attribute__ ((constructor)) beforemain(void);
+void __attribute__ ((constructor)) beforemain();
 /**
  * beforemain -execute before main
  */
