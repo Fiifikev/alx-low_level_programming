@@ -57,7 +57,7 @@ buffer = malloc(sizeof(char) * 1024);
 if (!buffer)
 {
 dprintf(STDERR_FILENO, "Error: Can't write from file %s \n", num);
-exit(99);
+exit(98);
 }
 return (buffer);
 }
@@ -74,7 +74,7 @@ int err = close(df);
 if (err == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %d \n", df);
-exit(100);
+exit(99);
 }
 }
 
