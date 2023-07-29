@@ -17,18 +17,11 @@ if (argc != 3)
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 exit(97);
 }
-
-
-buffer = malloc(sizeof(char) * 1024);
-if (!buffer)
-return (0);
-
 f1 = open(argv[1], O_RDONLY);
 r1 = read(f1, buffer, 1024);
 t2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 06664);
 
 do {
-
 if (r1 == -1  || f1 == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -49,14 +42,29 @@ r1 = read(f1, buffer, 1024);
 free(buffer);
 error_file(f1);
 error_file(t2);
-
 return (0);
 }
+/**
+ * build__buffer - build buffer
+ * @num : file
+ * Return: void
+ */
+char *build__buffer(char *num)
+{
+char *buffer;
+buffer = malloc(sizeof(char) * 1024);
+if (!buffer)
+{dprintf(STDERR_FILENO, "Error: Can't write from file %d \n", num);
+}
+exit(99);
+}
+return (buffer);
 
 
 /**
- * error_fileerror_file - check errors
+ * error_file - check errors
  * @df: file
+ * Return: Void
  */
 
 void error_file(int df)
@@ -68,3 +76,4 @@ dprintf(STDERR_FILENO, "Error: Can't read from file %d \n", df);
 exit(100);
 }
 }
+
