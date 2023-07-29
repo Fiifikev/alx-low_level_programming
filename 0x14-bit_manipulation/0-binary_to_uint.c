@@ -30,7 +30,7 @@ unsigned int binary_to_uint(const char *b)
 	while (b[i] != '\0')
 	{
 		decimalvalue <<= 1;
-		if (b[i] == '1')
+		if (b[i]  & 1)
 			decimalvalue += 1;
 		i++;
 	}
