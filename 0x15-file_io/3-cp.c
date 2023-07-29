@@ -20,7 +20,7 @@ exit(97);
 buffer = build__buffer(argv[2]);
 f1 = open(argv[1], O_RDONLY);
 r1 = read(f1, buffer, 1024);
-t2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 06664);
+t2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 do {
 if (r1 == -1  || f1 == -1)
@@ -57,7 +57,7 @@ buffer = malloc(sizeof(char) * 1024);
 if (!buffer)
 {
 dprintf(STDERR_FILENO, "Error: Can't write from file %s \n", num);
-exit(98);
+exit(99);
 }
 return (buffer);
 }
@@ -74,7 +74,7 @@ int err = close(df);
 if (err == -1)
 {
 dprintf(STDERR_FILENO, "Error: Can't read from file %d \n", df);
-exit(99);
+exit(100);
 }
 }
 
