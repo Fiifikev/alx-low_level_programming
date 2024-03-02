@@ -18,16 +18,14 @@ unsigned  int decimalvalue;
 decimalvalue = 0;
 
 
-if (b == NULL)
+if (!b)
 return (0);
 
 for (i = 0; b[i]; i++)
 {
-if (b[i] < '0' && b[i] > '1')
+if (b[i] < '0' || b[i] > '1')
 return (0);
-}
-
-decimalvalue = 2 * decimalvalue + (b[i] - '0')
+decimalvalue = 2 * decimalvalue + (b[i] - '0');
 }
 return (decimalvalue);
 }
